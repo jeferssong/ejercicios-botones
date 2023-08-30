@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Suma y Promedio</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="center">
+        <button class="button" id="buttonA"><i class="fa fa-buysellads" aria-hidden="true"></i>
+        </button>
+        <button class="button" id="buttonB"><i class="fa fa-bold" aria-hidden="true"></i>
+        </button>
+        <button class="button" id="buttonAB"><i class="fa fa-compress" aria-hidden="true"></i>
+        </button>
+        <div id="output"></div>
+
+        <script>
+            let contar = 0;
+            let numero = 0;
+            let suma = 0;
+            let promedio = 0;
+
+            const buttonA = document.getElementById("buttonA");
+            const buttonB = document.getElementById("buttonB");
+            const buttonAB = document.getElementById("buttonAB");
+            const output = document.getElementById("output");
+
+            buttonA.addEventListener("click", function () {
+                output.innerHTML = ".";
+                contar = 5;
+                suma = 0;
+                numero = 0;
+
+                for (let index = 0; index < contar; index++) {
+                    numero = numero + 2;
+                    output.innerHTML += "<br>" + numero;
+                    suma += numero;
+                }
+            });
+
+            buttonB.addEventListener("click", function () {
+                if (contar > 0) {
+                    promedio += suma / contar;
+                    output.innerHTML = "Suma: " + suma;
+                } else {
+                    output.innerHTML = "No se ha generado la secuencia aún.";
+                }
+            });
+
+            buttonAB.addEventListener("click", function () {
+                if (contar > 0) {
+                    promedio = suma / contar;
+                    output.innerHTML = "Promedio: " + promedio;
+                } else {
+                    output.innerHTML = "No se ha generado la secuencia aún.";
+                }
+            });
+
+        </script>
+    </div>
+</body>
+
+</html>
